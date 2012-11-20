@@ -10,8 +10,11 @@ This code is not safe for using it in real applications.
 
 ## Usage
 
-$ lein deps
-$ lein run
+\# lein deps
+
+\# lein run
+
+open http://127.0.0.1:8080/index.html in your browser
 
 ## License
 

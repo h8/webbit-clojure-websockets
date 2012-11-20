@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://jquery-websocket.googlecode.com/files/jquery.websocket-0.0.1.js"></script>
+        <script src="http://jquery-json.googlecode.com/files/jquery.json-2.2.min.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                var ws = $.websocket("ws://127.0.0.1:8080/websocket", {
+                        events: { 
+                            upcased: function(e) { $("#content").append(e.message + "<br>"); 
+                }}});
+    
+                $('#message').change(function(){
+                    ws.send('message', {type: "downcase", message: $("#message").val()});
+                    $("#message").val("");
+                });
+            });
+        </script>    
+    </head>
+    
+    <body>
+        <h1>WebSocket Demo</h1>
+        <input id="message" type="text"/>
+        
+        <section id="content"></section>
+    </body>
+</html>

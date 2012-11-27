@@ -16,6 +16,19 @@ This code is not safe for using it in real applications.
 
 open http://127.0.0.1:8080/index.html in your browser
 
+## Autoreload feature
+
+\# lein repl
+
+=> (use 'webbit-ws.autoreload)
+=> (use 'webbit-ws.core)
+=> (auto-reload '("src/webbit_ws"))
+=> (-main)
+
+Modify `say` function from say.clj and check messages in repl on each websocket message.
+
+=> (stop-server)
+
 ## License
 
 Copyright (C) 2012 Dmitry Stropaloff
